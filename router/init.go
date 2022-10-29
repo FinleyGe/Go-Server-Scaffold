@@ -9,5 +9,5 @@ var Router *gin.Engine
 
 func init() {
 	Router = gin.Default()
-	Router.Use(Cors)
+	Router.Use(Cors())
 }

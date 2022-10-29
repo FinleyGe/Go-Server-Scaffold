@@ -6,12 +6,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Cors(c *gin.Context) {
-	cors := cors.Default()
+func Cors() gin.HandlerFunc {
+	corsConfig := cors.DefaultConfig()
 	if Config.Dev {
-		cors.AllowAllOrigins = true
+		corsConfig.AllowAllOrigins = true
+	} else {
+
+		// TODO: add AllowHeaders
+		/* cors.AllowHeaders = append(corsConfig.AllowHeaders, "Authorization") */
+		corsConfig.AllowOrigins = Config.Server.AllowOrigins
 	}
-	// TODO: add AllowHeaders
-	/* cors.AllowHeaders = append(cors.AllowHeaders, "Authorization") */
-	cors.AllowOrigins = append(cors.AllowOrigins, Config.Server.AllowOrigins)
+	return cors.New(corsConfig)
 }

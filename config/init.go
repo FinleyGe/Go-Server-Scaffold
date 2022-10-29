@@ -16,4 +16,8 @@ func init() {
 	if err != nil {
 		log.Fatalln("Config Error")
 	}
+	err = config.Unmarshal(&Config)
+	if err != nil {
+		log.Fatalln("Config Error")
+	}
 }

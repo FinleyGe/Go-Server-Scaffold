@@ -6,5 +6,5 @@ import (
 )
 
 func Test(c *gin.Context) {
-	ResponseOK(c)
+	ResponseOK(c, "OK", nil)
 }
