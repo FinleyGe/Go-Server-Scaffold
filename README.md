@@ -17,4 +17,4 @@ Golang后端项目脚手架
 3. (全局替换, 参考命令)``sed -i "s/Go-Server-Scaffold/[Project-Name]/g" `grep -rl Go-Server-Scaffold [Project-Name]` ``
 
 # TODO
-- [ ] 自动化脚本
+- [x] 自动化脚本
