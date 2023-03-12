@@ -9,6 +9,7 @@ type ConfigStruct struct {
 type server struct {
 	Port         string   `mapstructure:"port"`
 	AllowOrigins []string `mapstructure:"allow_origins"`
+	LogFilePath  string   `mapstructure:"log_file_path"`
 }
 
 type database struct {
